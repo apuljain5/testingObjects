@@ -1,7 +1,7 @@
 import { LightningElement, track, api, wire } from 'lwc';
 
 import getLabelAndData from '@salesforce/apex/TestingObjectHelper.getLabelAndData';
-
+//Makeing changes to get reflected
 export default class TestingObjects extends LightningElement {    
     @api recordId;
     @api objectApiName;
