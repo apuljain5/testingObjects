@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <property 
+                name="caseFieldsToInclude"
+                type="String"
+                description="Provide the api names of the case fields you want to display as comma seperated values without using spaces"
+                label="Enter Case Fields"
+            />
+
+            <property 
+                name="accountFieldsToInclude"
+                type="String"
+                description="Provide the api names of the case.account fields you want to display as comma seperated values appending 'account.' without using spaces, i.e., account.Name,account.Phone"
+                label="Enter Account Fields"
+            />
+
+            <property 
+                name="contactFieldsToInclude"
+                type="String"
+                description="Provide the api names of the case.contact fields you want to display as comma seperated values appending 'contact.' without using spaces, i.e., contact.Name,account.Phone"
+                label="Enter Contact Fields"
+            />
+
+            <property 
+                name="sequenceOfFields"
+                type="String"
+                description="Provide the api names of the case/Account/Contact fields you want to display in sequence coloumn wise."
+                label="Enter Field Sequence"
+            />
+
+            <property 
+                name="compoundFields"
+                type="String"
+                description="Provide the api names of any Address Compound fields used above."
+                label="Mention Address Fields"
+            />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

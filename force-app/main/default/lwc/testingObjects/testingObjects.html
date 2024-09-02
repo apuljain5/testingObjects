@@ -1,0 +1,70 @@
+<template>
+    <lightning-card title="Details">
+        <div class="slds-var-p-left_medium" lwc:if={isError}>
+            <lightning-formatted-rich-text value={errorMsg}></lightning-formatted-rich-text>
+        </div>
+        <div class="slds-grid slds-wrap slds-var-p-around_medium " lwc:else>
+            <!-- Left Column -->
+            <div class="slds-col slds-size_1-of-2">
+                <template for:each={leftColumnData} for:item="field">
+                    <div key={field.label} >
+                        <template if:true={field.isAddress}>
+                            <div class="slds-form-element slds-form-element_readonly slds-var-m-around_small">
+                                <span class="slds-form-element__label">{field.label}</span>
+                                <div class="slds-form-element__control">
+                                    <div class="slds-form-element__static"><lightning-formatted-address
+                                        street={field.value.street}
+                                        city={field.value.city}
+                                        state={field.value.state}
+                                        postal-code={field.value.postalCode}
+                                        country={field.value.country}
+                                        disabled
+                                    ></lightning-formatted-address></div>
+                                </div>
+                            </div>
+                        </template>
+                        <template if:false={field.isAddress}>
+                        <div class="slds-form-element slds-form-element_readonly slds-var-m-around_small">
+                            <span class="slds-form-element__label">{field.label}</span>
+                            <div class="slds-form-element__control">
+                                <div class="slds-form-element__static">{field.value}</div>
+                            </div>
+                        </div>
+                        </template>
+                    </div>
+                </template>
+            </div>
+    
+            <!-- Right Column -->
+            <div class="slds-col slds-size_1-of-2">
+                <template for:each={rightColumnData} for:item="field">
+                    <div key={field.label} >
+                        <template if:true={field.isAddress}>
+                            <div class="slds-form-element slds-form-element_readonly slds-var-m-around_small">
+                                <span class="slds-form-element__label">{field.label}</span>
+                                <div class="slds-form-element__control">
+                                    <div class="slds-form-element__static"><lightning-formatted-address
+                                        street={field.value.street}
+                                        city={field.value.city}
+                                        state={field.value.state}
+                                        postal-code={field.value.postalCode}
+                                        country={field.value.country}
+                                        disabled
+                                    ></lightning-formatted-address></div>
+                                </div>
+                            </div>
+                        </template>
+                        <template if:false={field.isAddress}>
+                        <div class="slds-form-element slds-form-element_readonly slds-var-m-around_small">
+                            <span class="slds-form-element__label">{field.label}</span>
+                            <div class="slds-form-element__control">
+                                <div class="slds-form-element__static">{field.value}</div>
+                            </div>
+                        </div>
+                        </template>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </lightning-card>
+</template>
